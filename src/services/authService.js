@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 exports.register = async (userData) => {
-    const { username, password } = userData;
+    const { username, password, role } = userData;
 
     // Kiểm tra xem người dùng đã tồn tại chưa
     let user = await User.findOne({ username });
@@ -20,6 +20,7 @@ exports.register = async (userData) => {
     user = new User({
         username,
         password: hashedPassword,
+        role, // Thêm vai trò
     });
 
     await user.save();
@@ -43,7 +44,7 @@ exports.login = async (credentials) => {
     }
 
     // Tạo JWT
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
         expiresIn: '1h',
     });
 
