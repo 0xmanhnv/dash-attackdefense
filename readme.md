@@ -70,6 +70,12 @@ dash-attackdefense/
     docker-compose up --build
     ```
 
+    If run dev
+
+    ```bash
+    docker compose -f .\docker-compose-dev.yml up --build
+    ```
+
 2. Ứng dụng sẽ chạy tại `http://localhost:3000`.
 
 ### Chạy trong môi trường phát triển
