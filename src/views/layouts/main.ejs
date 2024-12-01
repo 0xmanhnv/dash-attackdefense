@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- 
+* Bootstrap Simple Admin Template
+* Version: 2.1
+* Author: Alexis Luna
+* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard | Bootstrap Simple Admin Template</title>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('./partials/header') %>
+        <div id="body" class="active">
+            <!-- navbar navigation component -->
+            <%- include('./partials/navbar') %>
+            <!-- end of navbar navigation -->
+            <div class="content">
+                <% body -%>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
